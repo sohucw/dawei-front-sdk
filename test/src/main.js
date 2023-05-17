@@ -5,15 +5,15 @@ import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import webSee from '../../packages/core/src';
+import daweiFront from '../../packages/core/src';
 import performance from '../../packages/performance/src';
 import recordscreen from '../../packages/recordscreen/src';
 
-// import webSee from '@dawei-front/core';
+// import daweiFront from '@dawei-front/core';
 // import performance from '@dawei-front/performance';
 // import recordscreen from '@dawei-front/recordscreen';
 
-Vue.use(webSee, {
+Vue.use(daweiFront, {
     url: 'http://localhost:8080/reportData',
     apikey: 'abcd',
     silentWhiteScreen: true,
@@ -32,8 +32,8 @@ Vue.use(webSee, {
         }
     }
 });
-webSee.use(performance);
-webSee.use(recordscreen, { recordScreentime: 15 });
+daweiFront.use(performance);
+daweiFront.use(recordscreen, {recordScreentime: 15});
 
 Vue.use(ElementUI, { size: 'mini' });
 Vue.config.productionTip = false;

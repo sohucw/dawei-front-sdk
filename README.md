@@ -1,5 +1,4 @@
 <div align="center">
-    <a href="#" target="_blank">
     </a>
     <p>前端监控SDK，可用来收集并上报：代码报错、性能数据、页面录屏、用户行为、白屏检测等个性化指标数据</p>
     <div align="left">
@@ -38,11 +37,11 @@ $ npm i @dawei-front/recordscreen
 ## Vue2 安装说明
 
 ```javascript
-import webSee from '@dawei-front/core';
+import daweiFront from '@dawei-front/core';
 import performance from '@dawei-front/performance';
 import recordscreen from '@dawei-front/recordscreen';
 
-Vue.use(webSee, {
+Vue.use(daweiFront, {
   url: 'http://text.com/reportData', // 上报的地址
   apikey: 'project1', // 项目唯一的id
   userId: '89757', // 用户id
@@ -62,50 +61,50 @@ Vue.use(webSee, {
 });
 
 // 注册性能检测插件
-webSee.use(performance);
+daweiFront.use(performance);
 // 注册页面录屏插件，设置单次录屏时长为20s，默认是10s
-webSee.use(recordscreen, { recordScreentime: 20 });
+daweiFront.use(recordscreen, { recordScreentime: 20 });
 ```
 
 ## Vue3 安装说明
 
 ```javascript
-import webSee from '@dawei-front/core';
+import daweiFront from '@dawei-front/core';
 import performance from '@dawei-front/performance';
 import recordscreen from '@dawei-front/recordscreen';
 
 const app = createApp(App);
-app.use(webSee, {
+app.use(daweiFront, {
   dsn: 'http://text.com/reportData',
   apikey: 'project1',
   userId: '89757',
 });
 
-webSee.use(performance);
-webSee.use(recordscreen);
+daweiFront.use(performance);
+daweiFront.use(recordscreen);
 ```
 
 ## React 安装说明
 
 ```javascript
-import webSee from '@dawei-front/core';
+import daweiFront from '@dawei-front/core';
 import performance from '@dawei-front/performance';
 import recordscreen from '@dawei-front/recordscreen';
 
-webSee.init({
+daweiFront.init({
   url: 'http://text.com/reportData',
   apikey: 'project1',
   userId: '89757',
 });
 
-webSee.use(performance);
-webSee.use(recordscreen);
+daweiFront.use(performance);
+daweiFront.use(recordscreen);
 ```
 
 如果在 React 项目中使用了 ErrorBoundary，要在 componentDidCatch 中将报错上报给服务器
 
 ```javascript
-import webSee from '@dawei-front/core';
+import daweiFront from '@dawei-front/core';
 import React from 'react';
 
 class ErrorBoundary extends React.Component {
@@ -118,7 +117,7 @@ class ErrorBoundary extends React.Component {
   }
   componentDidCatch(error, errorInfo) {
     // 在componentDidCatch中将报错上报给服务器
-    webSee.errorBoundary(err);
+    daweiFront.errorBoundary(err);
   }
   render() {
     if (this.state.hasError) {
@@ -217,9 +216,9 @@ handleHttpStatus
 
 ```javascript
 // 根据接口返回的response判断请求是否正确
-import webSee from 'webSee';
+import daweiFront from 'daweiFront';
 
-Vue.use(webSee, {
+Vue.use(daweiFront, {
   dsn: 'http://test.com/reportData',
   apikey: 'abcd',
   // handleHttpStatus 返回true表示接口正常，反之表示接口报错
@@ -277,9 +276,9 @@ async beforePost(data) {
 ## 手动上报错误示例
 
 ```javascript
-import webSee from 'web-see';
+import daweiFront from 'web-see';
 
-webSee.log({
+daweiFront.log({
   type: 'custom',
   message: '手动报错信息',
   error: new Error('报错'),
