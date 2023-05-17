@@ -1,0 +1,8 @@
+# Ignore artifacts:
+.husky
+node_modules
+.gitignore
+.eslintignore
+.prettierignore
+/build
+/dist

@@ -1,0 +1,26 @@
+{
+    "name": "@dawei-front/performance",
+    "version": "4.0.2",
+    "description": "",
+    "main": "src/index.ts",
+    "module": "dist/index.esm.js",
+    "publishConfig": {
+        "main": "dist/index.js"
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "author": "dawei",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:sohucw/dawei-front-sdk.git"
+    },
+    "dependencies": {
+        "@dawei-front/common": "workspace:*",
+        "@dawei-front/types": "workspace:*",
+        "@dawei-front/utils": "workspace:*",
+        "web-vitals": "^3.1.0"
+    }
+}

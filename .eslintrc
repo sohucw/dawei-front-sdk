@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser", // 需手动安装 @typescript-eslint/parser，这使Eslint能够理解TypeScript语法
+  // ESLint 支持使用第三方插件。在使用插件之前，你必须使用 npm 安装它。
+  // 在配置文件里配置插件时，可以使用 plugins 关键字来存放插件名字的列表。插件名称可以省略 eslint-plugin- 前缀。
+  "plugins": ["@typescript-eslint", "prettier"],
+  // 配置文件可以被基础配置中的已启用的规则继承。
+  "extends": [
+    "eslint:recommended", // 使用eslint中recommened的规则
+    "plugin:@typescript-eslint/eslint-recommended",// 可开启针对 ts 语法推荐的规则定义, 需额外手动安装 @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-useless-escape": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "off"
+  }
+}

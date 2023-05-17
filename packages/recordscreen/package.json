@@ -1,0 +1,29 @@
+{
+    "name": "@dawei-front/recordscreen",
+    "version": "4.0.2",
+    "description": "",
+    "main": "src/index.ts",
+    "module": "dist/index.esm.js",
+    "publishConfig": {
+        "main": "dist/index.js"
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "author": "dawei",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:sohucw/dawei-front-sdk.git"
+    },
+    "dependencies": {
+        "@types/pako": "^2.0.0",
+        "@dawei-front/common": "workspace:*",
+        "@dawei-front/types": "workspace:*",
+        "@dawei-front/utils": "workspace:*",
+        "js-base64": "3.7.3",
+        "pako": "2.1.0",
+        "rrweb": "1.1.3"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "@dawei-front/types",
+    "version": "4.0.2",
+    "description": "",
+    "main": "src/index.ts",
+    "module": "dist/index.esm.js",
+    "publishConfig": {
+        "main": "dist/index.js"
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "author": "dawei",
+    "license": "ISC",
+    "dependencies": {
+        "@dawei-front/common": "workspace:*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:sohucw/dawei-front-sdk.git"
+    }
+}
