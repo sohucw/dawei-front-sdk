@@ -1,6 +1,6 @@
 {
     "name": "@dawei-front/recordscreen",
-    "version": "4.0.2",
+    "version": "5.0.0",
     "description": "",
     "main": "src/index.ts",
     "module": "dist/index.esm.js",
