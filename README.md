@@ -171,15 +171,6 @@ class ErrorBoundary extends React.Component {
 |   `recordScreentime`   | `number` | `10`                                                          | 单次录屏时长，默认值为 10s                                                                                                |
 | `recordScreenTypeList` | `array`  | `['error', 'unhandledrejection', 'resource', 'fetch', 'xhr']` | 上报录屏的错误列表，默认会上报所有错误发生时的录屏信息，如设置 ['error', 'unhandledrejection'] 则只会上报代码报错时的录屏 |
 
-## web-see 前端监控文章
-
-这几篇文章详细介绍了该 SDK 的项目架构、功能实现、前端录屏、白屏检测等技术点
-
-[从 0 到 1 搭建前端监控平台，面试必备的亮点项目](https://github.com/xy-sea/blog/blob/main/markdown/%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0%EF%BC%8C%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87%E7%9A%84%E4%BA%AE%E7%82%B9%E9%A1%B9%E7%9B%AE.md)  
-[前端录屏+定位源码，帮你快速定位线上 bug](https://github.com/xy-sea/blog/blob/main/markdown/%E5%89%8D%E7%AB%AF%E5%BD%95%E5%B1%8F%2B%E5%AE%9A%E4%BD%8D%E6%BA%90%E7%A0%81%EF%BC%8C%E5%B8%AE%E4%BD%A0%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%BA%BF%E4%B8%8Abug.md)  
-[前端白屏的检测方案，让你知道自己的页面白了](https://github.com/xy-sea/blog/blob/main/markdown/%E5%89%8D%E7%AB%AF%E7%99%BD%E5%B1%8F%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%A1%88%EF%BC%8C%E8%AE%A9%E4%BD%A0%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B5%E9%9D%A2%E7%99%BD%E4%BA%86.md)  
-[pnpm + changesets 搭建 monorepo 架构的前端监控系统](https://github.com/xy-sea/blog/blob/main/markdown/pnpm%20%2B%20changesets%20%E6%90%AD%E5%BB%BA%20monorepo%20%E6%9E%B6%E6%9E%84%E7%9A%84%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F.md)
-
 ## 错误去重
 
 repeatCodeError 设置为 true 时，将开启一个缓存 map，存入已发生错误的 hash，上报错误时先判断该错误是否已存在，不存在则上报
@@ -192,7 +183,7 @@ repeatCodeError 设置为 true 时，将开启一个缓存 map，存入已发生
 在用户的同一次会话中，如果点击一个按钮出现了错误，那么再次点击同一个按钮，必定会出现同一个错误，而这出现的多次错误，影响的是同一个用户、同一次访问；所以将其全部上报是没有意义的；
 而在同一个用户的不同会话中，如果出现了同一个错误，那么这不同会话里的错误进行上报就显得有意义了
 
-web-see 根据错误堆栈信息，将`错误信息、错误文件、错误行号`聚合生成一个 hash 值，是这个错误唯一的 ID
+根据错误堆栈信息，将`错误信息、错误文件、错误行号`聚合生成一个 hash 值，是这个错误唯一的 ID
 
 ```javascript
 // 对每一个错误详情，生成唯一的编码
@@ -276,7 +267,7 @@ async beforePost(data) {
 ## 手动上报错误示例
 
 ```javascript
-import daweiFront from 'web-see';
+import daweiFront from 'dawei-front';
 
 daweiFront.log({
   type: 'custom',
